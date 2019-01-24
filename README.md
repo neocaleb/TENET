@@ -2,16 +2,8 @@ TENET
 
 Dependency
 
-python
-JAVA
 openmpi
-python package JPype
-
-Install
-
-1. Install openmpi
-
-2. Install JPype
+JPype
 
 Usage
 
