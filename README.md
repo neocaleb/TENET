@@ -1,5 +1,5 @@
 # TENET
-A tool for reconstructing Transfer Entropy-based causal gene network from pseudo-time ordered single cell transcriptomic data 
+A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo-time ordered single cell transcriptomic data 
 
 ## Dependency
 
