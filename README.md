@@ -13,7 +13,7 @@ JPype
 
 ## Input 
 
-1. expression_file - a csv file with N cells in the rows and M genes in the columns (same format with wishbone pseudotime package [1]).
+1. expression_file - a csv file with N cells in the rows and M genes in the columns (same format with wishbone pseudotime package).
 
 #### example
 
