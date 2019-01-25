@@ -1,20 +1,20 @@
-TENET
+# TENET
 
-Dependency
+## Dependency
 
 openmpi
 
 JPype
 
-Usage
+## Usage
 
 ./AllinOneRun.sh [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name]
 
-Input 
+## Input 
 
 1. expression_file - a csv file with N cells in the rows and M genes in the columns (same format with wishbone pseudotime package [1]).
 
-example
+#### example
 
 	GENE_1	GENE_2	GENE_3	...	GENE_M
 
@@ -32,7 +32,7 @@ CELL_N
 
 2. trajectory_file - a text file of pseudotime data with N time points in the same order as the N cells of the expression file.
 
-example
+#### example
 
 0.098
 0.040
@@ -44,7 +44,7 @@ example
 
 3. cell_select_file - a text file of cell selection data with N Boolean (1 for select and 0 for non-select) data in the same order as the N cells of the expression file.
 
-example
+#### example
 
 1
 1
@@ -54,11 +54,11 @@ example
 .
 1
 
-Output
+## Output
 
 TE_result_matrix.txt - TEij, M genes x M genes matrix representing the causal relationship from GENEi to GENEj.
 
-example
+#### example
 
 TE	GENE_1	GENE_2	GENE_3	...	GENE_M
 GENE_1	0	0.05	0.02	...	0.004
