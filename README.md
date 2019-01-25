@@ -17,12 +17,17 @@ Input
 example
 
 	GENE_1	GENE_2	GENE_3	...	GENE_M
+
 CELL_1	
+
 CELL_2
+
 CELL_3
+
 .
 .
 .
+
 CELL_N
 
 2. trajectory_file - a text file of pseudotime data with N time points in the same order as the N cells of the expression file.
