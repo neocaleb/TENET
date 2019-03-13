@@ -28,6 +28,8 @@ for line in ifile:
     branch.append(int(line.split()[0]))
 branch=numpy.array(branch)
 
+historyLength = int(sys.argv[5])
+
 trajectory1=numpy.array(trajectory1)
 trajectory1=trajectory1[branch==1]
 trajectory1SortIndex=numpy.argsort(trajectory1)
@@ -60,10 +62,11 @@ for num_pair in range(len(list_pairs)):
     teCalcClass = JPackage("infodynamics.measures.continuous.kernel").TransferEntropyCalculatorKernel
     teCalc = teCalcClass()
     teCalc.setProperty("NORMALISE", "true") # Normalise the individual variables
-    teCalc.initialise(1, 0.5) # Use history length 1 (Schreiber k=1), kernel width of 0.5 normalised units
+    teCalc.initialise(historyLength, 0.5) # Use history length 1 (Schreiber k=1), kernel width of 0.5 normalised units
     resultTemp=[]
     teCalc.setObservations(JArray(JDouble, 1)(expression_data[0]), JArray(JDouble, 1)(expression_data[1]))
     resultTemp.append(teCalc.computeAverageLocalOfObservations())
+    teCalc.initialise(historyLength, 0.5) # Use history length 1 (Schreiber k=1), kernel width of 0.5 normalised units
     teCalc.setObservations(JArray(JDouble, 1)(expression_data[1]), JArray(JDouble, 1)(expression_data[0]))
     resultTemp.append(teCalc.computeAverageLocalOfObservations())
     TEresult[num_pair] = numpy.ndarray.tolist(list_pairs[num_pair,:]) + resultTemp

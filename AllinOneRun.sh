@@ -1,27 +1,12 @@
 #!/bin/bash
-## specify $1 for input *.csv file, $2 for number of parallel jobs, $3 for trajectory_file , $4 for cell_select_file.
+## specify $1 for input *.csv file, $2 for number of parallel jobs, $3 for trajectory_file , $4 for cell_select_file, $5 for historyLength.
 
-## export trajectory_file="./pseudotime.txt"
-## export cell_select_file="./cell_select.txt"
 
 # transpose input matrix from cell*gene to gene*cell, and generate list of all pairs of genes
 cat $1 | cut -d ',' -f 2- | tail -n +2 | sed 's/,/ /g' > cell_gene.tsv
 cat $1 | head -n 1 | cut -d ',' -f 2- | tr ',' '\n' > gene_names
 num_gene=`cat cell_gene.tsv | wc -l | sed -e 's/^[ \t]*//'`
 python ./PreProcessScript.py
-
-#if [ -d "genes" ]; then
-#	rm -rf genes
-#fi
-#mkdir genes
-#cp cell_gene_trsps.csv genes/
-
-# split by genes
-#cd genes
-#split -a 3 -l 1 cell_gene_trsps.csv cell_gene_
-#rm -f cell_gene_trsps.csv
-#cd ..
-#ls -1 genes/ > list_genefiles
 
 # split pair list into # of jobs
 num_job=$2
@@ -37,10 +22,6 @@ split -a 3 -l ${num_line} all_pairs.csv pair_list_
 rm -f all_pairs.csv
 cd ..
 ls -1 pair_jobs/ > list_jobfiles
-#rm -f cell_gene.tsv all_pairs.csv cell_gene_trsps.csv
-
-## add loops to submit jobs to the PBS cluster system
-#python runTE.py pair_jobs/pair_list_aaa
 
 ## mpirun, by given number of jobs, check number of available cpu cores first
 mpirun_cmd='time mpirun'
@@ -49,21 +30,21 @@ if [ -d "outputs" ]; then
 fi
 mkdir outputs
 num_job=`grep -cv '^[[:space:]]*$' list_jobfiles`
-#num_job=10
+
 for ((loop=1;loop<=${num_job};loop++))
 do
 	input_file=`cat list_jobfiles | head -n $loop | tail -n 1`
 	output_id=`cat list_jobfiles | head -n $loop | tail -n 1 | cut -d '_' -f 3`
 	#echo $mpirun_cmd
-	mpirun_cmd=`echo $mpirun_cmd | sed -e "s/$/ -np 1 python runTE.py pair_jobs\/${input_file} outputs\/TE_out_${output_id}.csv $3 $4 :/g"`
+	mpirun_cmd=`echo $mpirun_cmd | sed -e "s/$/ -np 1 python runTE.py pair_jobs\/${input_file} outputs\/TE_out_${output_id}.csv $3 $4 $5 :/g"`
 	#echo $mpirun_cmd
 done
 echo $mpirun_cmd | sed 's/ :$//g' > mpirun_script.sh
 chmod a+x mpirun_script.sh
 ./mpirun_script.sh
 sleep 5
-#rm -f gene_names
+
 cat outputs/*.csv > TE_result_all.csv
-#rm -rf pair_jobs genes outputs mpirun_script.sh list_jobfiles list_genefiles
 chmod a+x makeTEasMatrix.py
 python makeTEasMatrix.py
+rm TE_result_all.csv

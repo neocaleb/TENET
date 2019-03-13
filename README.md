@@ -9,7 +9,7 @@ JPype
 
 ## Usage
 
-./AllinOneRun.sh [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name]
+./AllinOneRun.sh [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name] [history_length]
 
 ## Input 
 
@@ -31,7 +31,9 @@ JPype
 
 	CELL_N
 
-2. trajectory_file - a text file of pseudotime data with N time points in the same order as the N cells of the expression file.
+2. number_of_threads - You can use this multi-threads option. This will take lots of memory depending on the squared number of genes * the number of cells. If the program fail, you need to reduce this.
+
+3. trajectory_file - a text file of pseudotime data with N time points in the same order as the N cells of the expression file.
 
 #### example
 
@@ -43,7 +45,7 @@ JPype
 	.
 	0.565
 
-3. cell_select_file - a text file of cell selection data with N Boolean (1 for select and 0 for non-select) data in the same order as the N cells of the expression file.
+4. cell_select_file - a text file of cell selection data with N Boolean (1 for select and 0 for non-select) data in the same order as the N cells of the expression file.
 
 #### example
 
@@ -54,6 +56,8 @@ JPype
 	.
 	.
 	1
+
+5. history_length - the length of history. In the benchmark data TENET provides best result when the length of history set to 1.
 
 ## Output
 
