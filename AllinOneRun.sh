@@ -65,5 +65,5 @@ sleep 5
 #rm -f gene_names
 cat outputs/*.csv > TE_result_all.csv
 #rm -rf pair_jobs genes outputs mpirun_script.sh list_jobfiles list_genefiles
-Chmod a+x makeTEasMatrix.py
+chmod a+x makeTEasMatrix.py
 python makeTEasMatrix.py
