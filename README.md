@@ -1,5 +1,6 @@
 # TENET
 A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo-time ordered single cell transcriptomic data 
+<img src="https://github.com/neocaleb/TENET/blob/master/Figure1.pdf" width="90%"></img>
 
 ## Citation
 https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
