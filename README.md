@@ -2,7 +2,7 @@
 A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo-time ordered single cell transcriptomic data 
 
 <div>
-<img src="https://github.com/neocaleb/TENET/blob/master/Figure1.pdf" width="90%"></img>
+<img src="https://github.com/neocaleb/TENET/files/4690231/Figure1.pdf" width="90%"></img>
 </div>
 
 ## Citation
