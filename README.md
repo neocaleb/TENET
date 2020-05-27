@@ -1,6 +1,9 @@
 # TENET
 A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo-time ordered single cell transcriptomic data 
 
+## Citation
+https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
+
 ## Dependency
 
 openmpi
