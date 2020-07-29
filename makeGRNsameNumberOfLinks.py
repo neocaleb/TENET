@@ -33,7 +33,7 @@ TEsortIndex=numpy.argsort(TE)
 NumberOfLinks=sys.argv[1]
 ofile = open(file_name.replace(".txt",".NumberOfLinks")+NumberOfLinks+".sif","w")
 for i in range(int(NumberOfLinks)):
-    ofile.write(source[TEsortIndex[-i-1]]+"\t"+str(TE[i])+"\t"+target[TEsortIndex[-i-1]]+"\n")
+    ofile.write(source[TEsortIndex[-i-1]]+"\t"+str(TE[-i-1])+"\t"+target[TEsortIndex[-i-1]]+"\n")
 ofile.close()
 
 
