@@ -85,23 +85,38 @@ TE_result_matrix.txt - TEij, M genes x M genes matrix representing the causal re
 #### 1. Reconstructing GRN
 ###### Usage
 python makeGRN.py [cutoff for FDR]
+
 python makeGRNsameNumberOfLinks.py [number of links]
+
 python makeGRNbyTF.py [species] [cutoff for FDR]
+
 python makeGRNbyTFsameNumberOfLinks.py [species] [number of links]
+
 ** Note that "TE_result_matrix.txt" should be in the same folder.
+
 ###### Example
 python makeGRN.py 0.01
+
 python makeGRNsameNumberOfLinks.py 1000
+
 python makeGRNbyTF.py human 0.01
+
 python makeGRNbyTFsameNumberOfLinks.py human 1000
+
 ###### Output file
 TE_result_matrix.fdr0.01.sif
+
 TE_result_matrix.NumberOfLinks1000.sif
+
 TE_result_matrix.byGRN.fdr0.01.sif
+
 TE_result_matrix.byGRN.NumberOflinks1000.sif
+
 ###### Parameter
 [cutoff for fdr] - A cutoff value for FDR by z-test
+
 [number of links] - The number of links of the GRN
+
 [species] - User can choose human or mouse
 
 #### 2. Trimming indirect edges
