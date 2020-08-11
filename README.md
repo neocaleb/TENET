@@ -131,4 +131,4 @@ A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo
 ###### Example
 	python countOutdegree.py TE_result_matrix.fdr0.01.sif
 ###### Output file
-	TE_result_matrix.fdr.sif.outdegree.txt
+	TE_result_matrix.fdr0.01.sif.outdegree.txt
