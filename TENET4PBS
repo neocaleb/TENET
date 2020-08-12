@@ -9,7 +9,7 @@ source activate
 cat $1 | cut -d ',' -f 2- | tail -n +2 | sed 's/,/ /g' > cell_gene.tsv
 cat $1 | head -n 1 | cut -d ',' -f 2- | tr ',' '\n' > gene_names
 num_gene=`cat cell_gene.tsv | wc -l | sed -e 's/^[ \t]*//'`
-python ./PreProcessScriptPBS.py
+python ./PreProcessScript.py
 
 #if [ -d "genes" ]; then
 #	rm -rf genes
