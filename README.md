@@ -20,7 +20,7 @@ A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo
 
 #### example
 
-	./TENET Data.Boolean/expression_data.csv 10 Data.Boolean/trajectory.txt Data.Boolean/cell_select.txt 1
+	./TENET expression_data.csv 10 trajectory.txt cell_select.txt 1
 
 
 #### Input 
