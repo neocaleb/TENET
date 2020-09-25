@@ -90,13 +90,14 @@ https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
 ## 3. Run TENET from TF to target using expression data in a csv file and pseudotime result in a text file
 #### Usage
 
-        ./TENET [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name] [history_length] [species]
+        ./TENET_TF [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name] [history_length] [species]
 
 #### example
 
-        ./TENET expression_data.csv 10 trajectory.txt cell_select.txt 1 mouse
+        ./TENET_TF expression_data.csv 10 trajectory.txt cell_select.txt 1 mouse
 
 #### Input
+
 ###### (6) species - [human/mouse/rat]
 
 #### Output
