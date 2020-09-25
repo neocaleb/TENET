@@ -87,8 +87,28 @@ https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
 
 	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1
 
+## 3. Run TENET using expression data in a csv file and pseudotime result in a text file
+#### Usage
 
-## 3. Downstream analysis
+        ./TENET [expression_file_name] [number_of_threads] [trajectory_file_name] [cell_select_file_name] [history_length] [species]
+
+#### example
+
+        ./TENET expression_data.csv 10 trajectory.txt cell_select.txt 1 mouse
+
+#### Input
+###### (6) species - [human/mouse/rat]
+
+#### Output
+
+        TE_result_all.csv - list of TE values (index of regulator,index of target,TE value)
+	1,2,0.02
+	1,3,0.01
+	.
+	.
+	.
+
+## 4. Downstream analysis
 
 #### (1) Reconstructing GRN
 ###### Usage
