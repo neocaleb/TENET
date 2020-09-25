@@ -3,7 +3,7 @@ import sys
 
 TFlist=[]
 species=sys.argv[1]
-ifile = open("GO_symbol_"+species+"_regulation_of_transcription_list.txt")
+ifile = open("GO_symbol_"+species+"_regulation_of_transcription+sequence-specific_DNA_binding_list_list.txt")
 for line in ifile:
     TFlist.append(line.replace("\n","").replace("\r",""))
 
