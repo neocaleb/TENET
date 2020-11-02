@@ -102,13 +102,7 @@ https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
 
 #### Output
 
-        TE_result_all.csv - list of TE values (index of TF,index of target,TE value)
-
-        1,2,0.02
-        1,3,0.01
-        .
-        .
-        .
+        TE_result_matrix.txt
 
 ## 4. Downstream analysis
 

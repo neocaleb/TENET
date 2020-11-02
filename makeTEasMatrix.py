@@ -15,9 +15,10 @@ for i in range(len(gene_name)):
 
 ifile = open("TE_result_all.csv")
 for line in ifile:
-    temp=line.replace("\r\n","").split(",")
+    temp=line.replace("\n","").replace("\r","").split(",")
     TEmatrix[int(temp[0])-1][int(temp[1])-1]=float(temp[2])
-    TEmatrix[int(temp[1])-1][int(temp[0])-1]=float(temp[3])
+    if len(temp)>3:
+        TEmatrix[int(temp[1])-1][int(temp[0])-1]=float(temp[3])
 
 ofile = open("TE_result_matrix.txt","w")
 ofile.write("TE")
