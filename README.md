@@ -10,7 +10,8 @@ https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
 
 ## Dependency
 
-	openmpi
+	python3
+	openmpi (>4.0)
 	JPype
 
 ## 1. Run TENET using expression data in a csv file and pseudotime result in a text file
