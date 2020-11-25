@@ -6,7 +6,8 @@ A tool for reconstructing Transfer Entropy-based causal gene NETwork from pseudo
 </div>
 
 ## Citation
-https://www.biorxiv.org/content/10.1101/2019.12.20.884163v1.abstract
+
+Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 
 ## Dependency
 
