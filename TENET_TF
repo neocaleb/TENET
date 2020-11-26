@@ -47,4 +47,4 @@ sleep 5
 cat outputs/*.csv > TE_result_all.csv
 chmod a+x makeTEasMatrix.py
 python makeTEasMatrix.py
-rm TE_result_all.csv
+
