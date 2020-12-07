@@ -67,6 +67,8 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 
 ###### (5) history_length - the length of history. In the benchmark data TENET provides best result when the length of history set to 1.
 
+###### (6) use_raw_data - whether to use raw data stored in adata.raw.X (True) or data from adata.X Note that data stored in adata.X may be inappropriate for TENET if you have run batch correction methods on your data. 
+
 #### Output
 
 	TE_result_matrix.txt - TEij, M genes x M genes matrix representing the causal relationship from GENEi to GENEj.
@@ -83,11 +85,11 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 ## 2. Run TENET with hdf5 file including PAGA pseudotime result
 #### Usage
 
-	./TENET4PAGAhdf5 [hdf5_file_name] [number_of_threads] [history_length]
+	./TENET4PAGAhdf5 [hdf5_file_name] [number_of_threads] [history_length] [use_raw_data]
 
 #### example
 
-	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1
+	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1 False
 
 ## 3. Run TENET from TF to target using expression data in a csv file and pseudotime result in a text file
 #### Usage
