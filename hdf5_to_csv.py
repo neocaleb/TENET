@@ -2,7 +2,10 @@ import scanpy
 import sys
 
 adata=scanpy.read_h5ad(sys.argv[1])
-data_matrix=adata.X
+if sys.argv[2]=="raw":
+    data_matrix=adata.raw.X
+elseif sys.argv[2]=="X":
+    data_matrix=adata.X
 
 ofile = open("temp.csv","w")
 for gene_name in adata.var_names:

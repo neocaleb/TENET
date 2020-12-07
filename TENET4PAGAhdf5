@@ -1,7 +1,7 @@
 #!/bin/bash
-## specify $1 for input *.h5 file, $2 for number of parallel jobs, $3 for historyLength.
+## specify $1 for input *.h5 file, $2 for number of parallel jobs, $3 for historyLength, $4 for adata.X or adata.raw.X.
 
-python hdf5_to_csv.py $1
+python hdf5_to_csv.py $1 $4
 # transpose input matrix from cell*gene to gene*cell, and generate list of all pairs of genes
 cat temp.csv | cut -d ',' -f 2- | tail -n +2 | sed 's/,/ /g' > cell_gene.tsv
 cat temp.csv | head -n 1 | cut -d ',' -f 2- | tr ',' '\n' > gene_names

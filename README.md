@@ -81,18 +81,21 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 	GENE_M	0.34	0.012	0.032	...	0
 
 ## 2. Run TENET with hdf5 file including PAGA pseudotime result
-#### Input
-
-	hdf5 file stored after running PAGA.
-	Please make sure that a raw count data should be in adata.X and a pseudotime data should be in adata.obs['dpt_pseudotime']
-
 #### Usage
 
-	./TENET4PAGAhdf5 [hdf5_file_name] [number_of_threads] [history_length]
+	./TENET4PAGAhdf5 [hdf5_file_name] [number_of_threads] [history_length] [variable_in_adata]
 
 #### example
 
-	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1
+	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1 X
+	./TENET4PAGAhdf5 Data.Tuck/Tuck_PAGA510genes.h5ad 10 1 raw
+
+#### Input
+
+######## (1) hdf5 file stored after running PAGA.
+
+######## (2) [variable_in_adata]
+	If the expression matrix stored in adata.X, then choose X. If it is adata.raw.X, then choose raw.
 
 ## 3. Run TENET from TF to target using expression data in a csv file and pseudotime result in a text file
 #### Usage
