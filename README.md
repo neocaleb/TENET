@@ -136,7 +136,7 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 ###### Parameter
 	[cutoff for fdr] - A cutoff value for FDR by z-test
 	[number of links] - The number of links of the GRN
-	[species] - User can choose human or mouse
+	[species] - User can choose [human/mouse/rat]
 
 #### (2) Trimming indirect edges
 ###### Usage
