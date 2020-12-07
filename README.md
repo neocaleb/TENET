@@ -81,6 +81,11 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 	GENE_M	0.34	0.012	0.032	...	0
 
 ## 2. Run TENET with hdf5 file including PAGA pseudotime result
+#### Input
+
+	hdf5 file stored after running PAGA.
+	Please make sure that a raw count data should be in adata.X and a pseudotime data should be in adata.obs['dpt_pseudotime']
+
 #### Usage
 
 	./TENET4PAGAhdf5 [hdf5_file_name] [number_of_threads] [history_length]
