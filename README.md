@@ -27,7 +27,7 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 
 #### Input 
 
-###### (1) expression_file - a csv file with N cells in the rows and M genes in the columns (same format with wishbone pseudotime package).
+###### (1) expression_file (raw count is recommended) - a csv file with N cells in the rows and M genes in the columns (same format with wishbone pseudotime package).
 
 		GENE_1	GENE_2	GENE_3	...	GENE_M
 
