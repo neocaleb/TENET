@@ -92,9 +92,9 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 
 #### Input
 
-######## (1) hdf5 file stored after running PAGA.
+####### (1) hdf5 file stored after running PAGA.
 
-######## (2) [variable_in_adata]
+####### (2) [variable_in_adata]
 	If the expression matrix stored in adata.X, then choose X. If it is adata.raw.X, then choose raw.
 
 ## 3. Run TENET from TF to target using expression data in a csv file and pseudotime result in a text file
