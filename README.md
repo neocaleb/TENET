@@ -114,7 +114,20 @@ Nucleic Acids Research, gkaa1014, https://doi.org/10.1093/nar/gkaa1014
 
         TE_result_matrix.txt
 
-## 4. Downstream analysis
+## 4. Run TENET single core version
+#### Usage
+
+	python TENETsinglecore [expression_file_name] [trajectory_file_name] [cell_select_file_name] [history_length]
+
+#### example
+
+	python TENETsinglecore expression_data.csv trajectory.txt cell_select.txt 1
+
+#### Output
+
+	TE_result_matrix.txt
+
+## 5. Downstream analysis
 
 #### (1) Reconstructing GRN
 ###### Usage
