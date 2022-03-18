@@ -19,6 +19,6 @@ ifile.close()
 ofile = open(".".join(file_name.split(".")[:-1])+".prune0target.sif","w")
 for line in networks:
     temp = line.split()
-    if node_outdegree[node_unique.index(temp[0])]>0:
+    if node_outdegree[node_unique.index(temp[2])]>0:
         ofile.write(line)
 ofile.close()
